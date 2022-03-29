@@ -14,7 +14,7 @@
 
 .inner-frame {
     width: 18.75em;
-    height: 25em;
+    height: 32em;
     background: white;
     margin: 3.125em auto;
     text-align: center;
@@ -32,14 +32,76 @@
 
 .row {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    text-align: center;
 }
 
 .calc-grid {
-    padding: 2.1875em 2.1875em 2.5em 2.1875em;
     height: 65%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 
+}
+
+button {
+    height: 60px;
+    border-radius: 3px;
+    border: 1px solid #c4c4c4;
+    background-color: transparent;
+    padding: 0.75em;
+    margin: 0.1em;
+    font-size: 2rem;
+    color: #333;
+    background-image: linear-gradient(to bottom,transparent,transparent 50%,rgba(0,0,0,.04));
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,.05), inset 0 1px 0 0 rgba(255,255,255,.45), inset 0 -1px 0 0 rgba(255,255,255,.15), 0 1px 0 0 rgba(255,255,255,.15);
+    text-shadow: 0 1px rgba(255,255,255,.4);
+    text-align: center;
+}
+
+button:hover {
+    background-color: #eaeaea;
+}
+
+#delete {
+    padding: 0.5em;
+}
+
+#deci, #x {
+    padding: 0.85em; !important
+}
+
+.operator {
+    color: #337cac;
+}
+
+#reset, #equals {
+    width: 1000em;
+    margin: auto 0.5em auto auto;
+}
+
+#last-row {
+    width: 100%;
+    position: relative;
+    left: 0.3em;
+}
+
+.clear {
+    background-color: #f0595f;
+    border-color: #b0353a;
+    color: #fff;
+}
+
+.clear:hover {
+    background-color: #f17377;
+}
+
+.equals {
+    background-color: #2e86c0;
+    border-color: #337cac;
+    color: #fff;
+}
+
+.equals:hover {
+    background-color: #4e9ed4;
 }
