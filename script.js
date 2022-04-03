@@ -30,6 +30,26 @@
         return Math.round(num * 100) / 100;
     }
 
+    function onDeleteClicked() {
+        currentInput.pop();
+        render();
+    }
+
+    function onEqualClicked() {
+        currentCalculated = eval(currentInput.join(""));
+        currentCalculated = roundNum(currentCalculated);
+
+        previousInput = currentInput.splice(0);
+        currentInput = [];
+        render();
+    }
+
+    function onResetClicked() {
+        currentInput = [];
+        previousInput = [];
+        render();
+    }
+
     function getElement(element) {
         return element.charAt(0) === "#"
             ? document.querySelector(element)
@@ -76,4 +96,7 @@
         e.onclick = onOperatorClicked;
     });
 
+    deleteButton.onclick = onDeleteClicked;
+    equalsButton.onclick = onEqualClicked;
+    resetButton.onclick = onResetClicked;
 })();
