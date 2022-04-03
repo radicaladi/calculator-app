@@ -10,6 +10,25 @@
     var previousViewer = getElement(".previous")[0];
     var currentViewer = getElement(".current")[0];
 
+    function onNumberClicked() {
+        let value = this.getAttribute("id");
+        currentInput.push(value);
+        render();
+    }
+
+    function onOperatorClicked() {
+        let value = this.getAttribute("id");
+        if (previousInput.length > 0 && currentInput.length < 1)
+            currentInput = currentInput.concat(
+                roundNum(eval(previousInput.join("")))
+            );
+        currentInput.push(value);
+        render();
+    }
+
+    function roundNum(num) {
+        return Math.round(num * 100) / 100;
+    }
 
     function getElement(element) {
         return element.charAt(0) === "#"
@@ -48,5 +67,13 @@
         renderPrevious();
         renderCurrent();
     }
+
+    numberInputs.forEach(e => {
+        e.onclick = onNumberClicked;
+    });
+
+    operatorInputs.forEach(e => {
+        e.onclick = onOperatorClicked;
+    });
 
 })();
